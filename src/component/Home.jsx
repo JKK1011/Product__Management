@@ -4,7 +4,10 @@ import productService from "../service/product.service";
 
 const Home = () => {
   const [productList, setProductList] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [msg, setMsg] = useState("");
+
   useEffect(() => {
     init();
   }, []);
@@ -14,6 +17,9 @@ const Home = () => {
       .getAllProduct()
       .then((res) => {
         setProductList(res.data);
+        // Extracting categories from productList
+        const uniqueCategories = [...new Set(res.data.map(product => product.category))];
+        setCategories(uniqueCategories);
       })
       .catch((error) => {
         console.log(error);
@@ -24,13 +30,21 @@ const Home = () => {
     productService
       .deleteProduct(id)
       .then((res) => {
-        setMsg("Delete Sucessfully");
+        setMsg("Delete Successfully");
         init();
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProducts = selectedCategory
+    ? productList.filter(product => product.category === selectedCategory)
+    : productList;
 
   return (
     <>
@@ -39,12 +53,28 @@ const Home = () => {
           <div className="col-md-12">
             <div className="card">
               <div className="card-header fs-3 text-center">
-                All Product List
+                {selectedCategory ? `Products in ${selectedCategory}` : "All Product List"}
                 {msg && <p className="fs-4 text-center text-success">{msg}</p>}
               </div>
 
               <div className="card-body">
-                <table class="table">
+                <div className="mb-3">
+                  <label>Select Category:</label>
+                  <select
+                    className="form-control"
+                    onChange={(e) => handleCategoryChange(e.target.value)}
+                    value={selectedCategory}
+                  >
+                    <option value="">All</option>
+                    {categories.map((category, index) => (
+                      <option key={index} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <table className="table">
                   <thead>
                     <tr>
                       <th scope="col">Sl No</th>
@@ -56,15 +86,15 @@ const Home = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {productList.map((p, num) => (
-                      <tr>
-                        <td>{num + 1}</td>
+                    {filteredProducts.map((p, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
                         <td>{p.productName}</td>
                         <td>{p.description}</td>
                         <td>{p.price}</td>
                         <td>{p.status}</td>
                         <td>
-                          <Link to={'editProduct/'+p.id} className="btn btn-sm btn-primary">
+                          <Link to={`editProduct/${p.id}`} className="btn btn-sm btn-primary">
                             Edit
                           </Link>
                           <button

@@ -9,6 +9,7 @@ const EditProduct = () => {
     description: "",
     price: "",
     status: "",
+    category: "", // Added category field
   });
 
   const navigate = useNavigate();
@@ -98,6 +99,22 @@ const EditProduct = () => {
                       value={product.status}
                     />
                   </div>
+
+                  <div className="mb-3">
+                    <label>Select Category</label>
+                    <select
+                      name="category"
+                      className="form-control"
+                      onChange={handleChange}
+                      value={product.category}
+                    >
+                      <option value="">Select category</option>
+                      <option value="Category 1">Category 1</option>
+                      <option value="Category 2">Category 2</option>
+                      {/* Add more options as needed */}
+                    </select>
+                  </div>
+
                   <button className="btn btn-primary col-md-12">Update</button>
                 </form>
               </div>

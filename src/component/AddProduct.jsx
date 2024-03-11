@@ -7,6 +7,7 @@ const AddProduct = () => {
     description: "",
     price: "",
     status: "",
+    category: "", // Added category field
   });
 
   const [msg, setMsg] = useState("");
@@ -22,13 +23,14 @@ const AddProduct = () => {
     productService
       .saveProduct(product)
       .then((res) => {
-        console.log("Product Added Sucessfully");
-        setMsg("Product Added Sucessfully");
+        console.log("Product Added Successfully");
+        setMsg("Product Added Successfully");
         setProduct({
           productName: "",
           description: "",
           price: "",
           status: "",
+          category: "", // Reset category field
         });
       })
       .catch((error) => {
@@ -89,6 +91,22 @@ const AddProduct = () => {
                       value={product.status}
                     />
                   </div>
+
+                  <div className="mb-3">
+                    <label>Select Category</label>
+                    <select
+                      name="category"
+                      className="form-control"
+                      onChange={handleChange}
+                      value={product.category}
+                    >
+                      <option value="">Select category</option>
+                      <option value="Category 1">Category 1</option>
+                      <option value="Category 2">Category 2</option>
+                      {/* Add more options as needed */}
+                    </select>
+                  </div>
+
                   <button className="btn btn-primary col-md-12">Submit</button>
                 </form>
               </div>
