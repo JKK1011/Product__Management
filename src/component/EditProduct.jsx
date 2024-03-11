@@ -10,7 +10,7 @@ const EditProduct = () => {
     price: "",
     status: "",
     category: "", 
-    brandName: "", // Add brandName field
+    brandName: "", 
   });
 
   const navigate = useNavigate();
