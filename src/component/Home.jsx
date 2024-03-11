@@ -78,6 +78,7 @@ const Home = () => {
                   <thead>
                     <tr>
                       <th scope="col">Sl No</th>
+                      <th scope="col">Brand Name</th>
                       <th scope="col">Product Name</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
@@ -89,6 +90,7 @@ const Home = () => {
                     {filteredProducts.map((p, index) => (
                       <tr key={index}>
                         <td>{index + 1}</td>
+                        <td>{p.brandName}</td>
                         <td>{p.productName}</td>
                         <td>{p.description}</td>
                         <td>{p.price}</td>

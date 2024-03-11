@@ -7,7 +7,8 @@ const AddProduct = () => {
     description: "",
     price: "",
     status: "",
-    category: "", // Added category field
+    category: "",
+    brandName: "", // Added brandName field
   });
 
   const [msg, setMsg] = useState("");
@@ -30,7 +31,8 @@ const AddProduct = () => {
           description: "",
           price: "",
           status: "",
-          category: "", // Reset category field
+          category: "",
+          brandName: "", // Reset brandName field
         });
       })
       .catch((error) => {
@@ -49,6 +51,17 @@ const AddProduct = () => {
 
               <div className="card-body">
                 <form onSubmit={(e) => ProductRegsiter(e)}>
+                  <div className="mb-3">
+                    <label>Enter Brand Name</label>
+                    <input
+                      type="text"
+                      name="brandName"
+                      className="form-control"
+                      onChange={(e) => handleChange(e)}
+                      value={product.brandName}
+                    />
+                  </div>
+
                   <div className="mb-3">
                     <label>Enter Product Name</label>
                     <input
@@ -101,9 +114,13 @@ const AddProduct = () => {
                       value={product.category}
                     >
                       <option value="">Select category</option>
-                      <option value="Category 1">Category 1</option>
-                      <option value="Category 2">Category 2</option>
-                      {/* Add more options as needed */}
+                      <option value="Smart Phone">Smart Phone</option>
+                      <option value="Audio">Audio</option>
+                      <option value="Home Appliances">Home Appliances</option>
+                      <option value="Stationary">Stationary</option>
+                      <option value="Fashion">Fashion</option>
+                      <option value="Watch">Watch</option>
+                      <option value="Laptop">Laptop</option>
                     </select>
                   </div>
 

@@ -9,7 +9,8 @@ const EditProduct = () => {
     description: "",
     price: "",
     status: "",
-    category: "", // Added category field
+    category: "", 
+    brandName: "", // Add brandName field
   });
 
   const navigate = useNavigate();
@@ -57,6 +58,17 @@ const EditProduct = () => {
 
               <div className="card-body">
                 <form onSubmit={ProductUpdate}>
+                  <div className="mb-3">
+                    <label>Enter Brand Name</label>
+                    <input
+                      type="text"
+                      name="brandName"
+                      className="form-control"
+                      onChange={handleChange}
+                      value={product.brandName}
+                    />
+                  </div>
+
                   <div className="mb-3">
                     <label>Enter Product Name</label>
                     <input
