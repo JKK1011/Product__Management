@@ -120,10 +120,14 @@ const EditProduct = () => {
                       onChange={handleChange}
                       value={product.category}
                     >
-                      <option value="">Select category</option>
-                      <option value="Category 1">Category 1</option>
-                      <option value="Category 2">Category 2</option>
-                      {/* Add more options as needed */}
+                        <option value="">Select category</option>
+                      <option value="Smart Phone">Smart Phone</option>
+                      <option value="Audio">Audio</option>
+                      <option value="Home Appliances">Home Appliances</option>
+                      <option value="Stationary">Stationary</option>
+                      <option value="Fashion">Fashion</option>
+                      <option value="Watch">Watch</option>
+                      <option value="Laptop">Laptop</option>
                     </select>
                   </div>
 
