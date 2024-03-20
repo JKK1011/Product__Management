@@ -4,7 +4,6 @@ import Navbar from './component/Navbar';
 import Home from './component/Home';
 import AddProduct from './component/AddProduct';
 import EditProduct from './component/EditProduct';
-
 function App() {
   return (
     <>
