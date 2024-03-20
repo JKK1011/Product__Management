@@ -1,3 +1,55 @@
+# Product Management System
+
+Welcome to our Product Management System! This project is designed to help businesses efficiently manage their products and provide users with a seamless experience. Below, we'll provide an overview of the functionalities, technologies used, and how to run the project.
+
+## Functionalities
+
+### User Roles
+- **User**: Users have complete control over product data, including adding, editing, and deleting products as necessary. They can also view product details and manage their account information.
+
+### Product Management
+- **User Control**: Users have complete control over product data, including adding, editing, and deleting products as necessary.
+- **Flexible Data Adjustment**: Users can modify all aspects of a product, such as its name, description, price, and other details, to ensure accurate representation.
+- **Automatic Update**: Any changes made to product information are instantly reflected in the system, guaranteeing real-time accuracy and consistency.
+
+## Technologies Used
+
+- **Spring Boot**: The backend of the application is built using Spring Boot, providing a powerful and streamlined framework for building Java-based applications.
+- **Hibernate**: Hibernate is used as the ORM (Object-Relational Mapping) tool to facilitate interaction with the database.
+- **HTML/CSS/JavaScript**: The frontend interface is developed using HTML for structure, CSS for styling, and JavaScript for interactivity.
+- **Spring Security**: Spring Security is used for secure authentication and authorization.
+- **PostgreSQL**: PostgreSQL is used as the relational database management system to store information about products, users, and orders.
+
+## Additional Notes
+
+- Implement proper validation for user inputs.
+- Handle errors and edge cases gracefully.
+- Enhance the UI/UX for better user experience.
+- Implement pagination for product lists if dealing with a large number of records.
+- Implement functionalities for tracking order history.
+- Implement functionalities for managing user roles and permissions.
+
+## Running the Project
+
+To run the project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Make sure you have PostgreSQL installed and running on your machine.
+4. Set up the database by running the SQL scripts provided in the project.
+5. Configure the database connection properties in the `application.properties` file.
+6. Build the project using Maven or your preferred build tool.
+7. Run the Spring Boot application.
+8. Open your web browser and navigate to the specified localhost port to access the application.
+
+## Conclusion
+
+Our Product Management System provides a user-friendly interface for users to efficiently manage products. With features like comprehensive product management, real-time updates, and user-friendly design, this system aims to streamline business operations and enhance the user experience. Built with Spring Boot, Hibernate, HTML, CSS, JavaScript, and PostgreSQL, it offers a robust and scalable solution for businesses of all sizes.
+
+## Contributors
+
+- Kalariya Jeel
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
